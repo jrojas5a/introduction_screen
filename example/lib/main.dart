@@ -50,34 +50,35 @@ class OnBoardingPage extends StatelessWidget {
     return IntroductionScreen(
       pages: [
         PageViewModel(
-          title: "Fractional shares",
+          title: "Acciones fraccionarias",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
+              "En lugar de tener que comprar una acción completa, invierta la cantidad que desee.",
           image: _buildImage('img1'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
+          title: "Aprende sobre la marcha",
           body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
+              "Descargue la aplicación Asesorate y domine el mercado con nuestra mini lección.",
           image: _buildImage('img2'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
+          title: "Niños y adolescentes",
           body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
+              "Los niños y adolescentes pueden realizar un seguimiento de sus existencias las 24 horas del día, los 7 días de la semana, y realizar transacciones que usted apruebe.",
           image: _buildImage('img3'),
+
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
+          title: "Otro titulo de Página",
+          body: "Otro texto en este hermoso onboarding",
           image: _buildImage('img2'),
-          footer: RaisedButton(
+          footer: FlatButton(
             onPressed: () {/* Nothing */},
             child: const Text(
-              'FooButton',
+              'Afíliate',
               style: TextStyle(color: Colors.white),
             ),
             color: Colors.lightBlue,
@@ -88,13 +89,10 @@ class OnBoardingPage extends StatelessWidget {
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Title of last page",
+          title: "¿Estás listo para comenzar?",
           bodyWidget: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              Text("Click on ", style: bodyStyle),
-              Icon(Icons.edit),
-              Text(" to edit a post", style: bodyStyle),
             ],
           ),
           image: _buildImage('img1'),
@@ -106,9 +104,9 @@ class OnBoardingPage extends StatelessWidget {
       showSkipButton: true,
       skipFlex: 0,
       nextFlex: 0,
-      skip: const Text('Skip'),
+      skip: const Text('Saltar'),
       next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      done: const Text('Listo', style: TextStyle(fontWeight: FontWeight.w600)),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),
