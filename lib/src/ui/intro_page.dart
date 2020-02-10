@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/src/model/page_view_model.dart';
 import 'package:introduction_screen/src/ui/intro_content.dart';
+import 'package:introduction_screen/src/colors/asesorate.dart';
 
 class IntroPage extends StatelessWidget {
   final PageViewModel page;
@@ -20,9 +21,29 @@ class IntroPage extends StatelessWidget {
             if (page.image != null)
               Expanded(
                 flex: page.decoration.imageFlex,
-                child: Padding(
-                  padding: page.decoration.imagePadding,
-                  child: page.image,
+                child: Stack(
+                  alignment: AlignmentDirectional.bottomCenter,
+                  children: <Widget>[
+                    Padding(
+                      padding: page.decoration.imagePadding,
+                      child: page.image,
+                    ),
+                    Positioned(
+                      bottom: -30.0,
+                      child:Container(
+                        width: 180.0,
+                        height: 180.0,
+                        decoration: new BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                      )
+                    ),
+                    Positioned(
+                      bottom: 60.0,
+                      child: page.iconTitleWidget,
+                    )
+                  ]
                 ),
               ),
             Expanded(

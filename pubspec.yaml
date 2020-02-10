@@ -10,11 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
 
   dots_indicator: ^1.1.0
 
 flutter:
+  
   fonts:
       - family: OpenSansBold
         fonts:

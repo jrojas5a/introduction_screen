@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'colors/asesorate.dart';
 
 void main() => runApp(App());
 
@@ -62,21 +64,38 @@ class OnBoardingPage extends StatelessWidget {
     return IntroductionScreen(
       pages: [
         PageViewModel(
-          title: "Encuentra",
-          body: 
-              "el trámite legal que necesitas",
+          title: "el trámite legal que necesitas",
+          iconTitleWidget: Image.asset(
+            "assets/search-solid.png", 
+            color: asesorateColor,
+            width: 60,
+            height: 60,
+          ),
+          body: "el trámite legal que necesitas",
           image: _buildImage('onboarding-1'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Llena los datos",
+          iconTitleWidget: Image.asset(
+            "assets/document.png", 
+            color: asesorateColor,
+            width: 60,
+            height: 60,
+          ),
           body:
               "en el formulario del documento",
           image: _buildImage('onboarding-2'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Buscaremos",
+          title: "Buscaremos", 
+          iconTitleWidget: Image.asset(
+            "assets/user-check-solid.png", 
+            color: asesorateColor,
+            width: 60,
+            height: 60,
+          ),                    
           body:
               "el abogado ideal para tu trámite",
           image: _buildImage('onboarding-3'),
@@ -85,6 +104,12 @@ class OnBoardingPage extends StatelessWidget {
         ),
         PageViewModel(
           title: "Paga",
+          iconTitleWidget: Image.asset(
+            "assets/credit-card.png", 
+            color: asesorateColor,
+            width: 60,
+            height: 60,
+          ),
           body:
               "con tu tarjeta de crédito",
           image: _buildImage('onboarding-4'),
@@ -101,9 +126,10 @@ class OnBoardingPage extends StatelessWidget {
       skip: const Text('Saltar'),
       next: const Icon(Icons.arrow_forward),
       done: const Text('Listo', style: TextStyle(fontWeight: FontWeight.w600)),
-      dotsDecorator: const DotsDecorator(
+      dotsDecorator: DotsDecorator(
         size: Size(10.0, 10.0),
-        color: Color(0xFFBDBDBD),
+        color: asesorateColor,
+        activeColor: asesorateDark,
         activeSize: Size(22.0, 10.0),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),

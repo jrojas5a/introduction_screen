@@ -9,6 +9,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_svg: ^0.17.1    
+
   introduction_screen:
     path: ../
 
