@@ -14,6 +14,7 @@ class PageDecoration {
   /// @Default style `fontSize: 18.0, fontWeight: FontWeight.normal`
   final TextStyle bodyTextStyle;
 
+
   /// BoxDecoration for page
   final BoxDecoration boxDecoration;
 
@@ -61,8 +62,8 @@ class PageDecoration {
     this.boxDecoration,
     this.imageFlex = 1,
     this.bodyFlex = 1,
-    this.imagePadding = const EdgeInsets.only(bottom: 24.0),
-    this.contentPadding = const EdgeInsets.all(16.0),
+    this.imagePadding = const EdgeInsets.only(bottom: 30.0),
+    this.contentPadding = const EdgeInsets.all(30.0),
     this.titlePadding = const EdgeInsets.only(bottom: 24.0),
     this.descriptionPadding = EdgeInsets.zero,
     this.footerPadding = const EdgeInsets.symmetric(vertical: 24.0),

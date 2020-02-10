@@ -12,9 +12,9 @@ class App extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'Introduction screen',
+      title: 'Onboarding',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.red),
       home: OnBoardingPage(),
     );
   }
@@ -30,74 +30,68 @@ class OnBoardingPage extends StatelessWidget {
   }
 
   Widget _buildImage(String assetName) {
-    return Align(
-      child: Image.asset('assets/$assetName.jpg', width: 350.0),
-      alignment: Alignment.bottomCenter,
+
+    return Column(
+
+      children: <Widget>[
+
+        Image.asset(
+          'assets/$assetName.jpg',
+            
+          ),
+        
+
+      ],
+      
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(fontSize: 19.0);
+    const bodyStyle = TextStyle(fontSize: 24.0, fontFamily: 'OpenSansBold');
+    
     const pageDecoration = const PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+      titleTextStyle: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700,fontFamily: 'OpenSansRegular'),
       bodyTextStyle: bodyStyle,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       pageColor: Colors.white,
       imagePadding: EdgeInsets.zero,
+      
     );
 
     return IntroductionScreen(
       pages: [
         PageViewModel(
-          title: "Acciones fraccionarias",
-          body:
-              "En lugar de tener que comprar una acción completa, invierta la cantidad que desee.",
-          image: _buildImage('img1'),
+          title: "Encuentra",
+          body: 
+              "el trámite legal que necesitas",
+          image: _buildImage('onboarding-1'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Aprende sobre la marcha",
+          title: "Llena los datos",
           body:
-              "Descargue la aplicación Asesorate y domine el mercado con nuestra mini lección.",
-          image: _buildImage('img2'),
+              "en el formulario del documento",
+          image: _buildImage('onboarding-2'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Niños y adolescentes",
+          title: "Buscaremos",
           body:
-              "Los niños y adolescentes pueden realizar un seguimiento de sus existencias las 24 horas del día, los 7 días de la semana, y realizar transacciones que usted apruebe.",
-          image: _buildImage('img3'),
+              "el abogado ideal para tu trámite",
+          image: _buildImage('onboarding-3'),
 
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Otro titulo de Página",
-          body: "Otro texto en este hermoso onboarding",
-          image: _buildImage('img2'),
-          footer: FlatButton(
-            onPressed: () {/* Nothing */},
-            child: const Text(
-              'Afíliate',
-              style: TextStyle(color: Colors.white),
-            ),
-            color: Colors.lightBlue,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-          ),
+          title: "Paga",
+          body:
+              "con tu tarjeta de crédito",
+          image: _buildImage('onboarding-4'),
+
           decoration: pageDecoration,
         ),
-        PageViewModel(
-          title: "¿Estás listo para comenzar?",
-          bodyWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-            ],
-          ),
-          image: _buildImage('img1'),
-          decoration: pageDecoration,
-        ),
+        
       ],
       onDone: () => _onIntroEnd(context),
       //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
@@ -123,8 +117,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
-      body: const Center(child: Text("This is the screen after Introduction")),
+      appBar: AppBar(title: const Text('Asesorate')),
+      body: const Center(child: Text("Asesorate App")),
     );
   }
 }
