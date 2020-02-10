@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'colors/asesorate.dart';
+import 'package:flutter/foundation.dart';
+import 'package:introduction_example/customButton.dart';
 
 void main() => runApp(App());
 
@@ -32,19 +33,12 @@ class OnBoardingPage extends StatelessWidget {
   }
 
   Widget _buildImage(String assetName) {
-
     return Column(
-
       children: <Widget>[
-
         Image.asset(
-          'assets/$assetName.jpg',
-            
+          'assets/$assetName',
           ),
-        
-
       ],
-      
     );
   }
 
@@ -64,6 +58,18 @@ class OnBoardingPage extends StatelessWidget {
     return IntroductionScreen(
       pages: [
         PageViewModel(
+          title: "",
+          iconTitleWidget: Image.asset(
+            "assets/asesorate-a.png", 
+            color: asesorateColor,
+            width: 60,
+            height: 60,
+          ),          
+          bodyWidget:
+              Image(image: AssetImage('assets/asesorate.png'),height: 490.0,),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
           title: "el trámite legal que necesitas",
           iconTitleWidget: Image.asset(
             "assets/search-solid.png", 
@@ -72,7 +78,7 @@ class OnBoardingPage extends StatelessWidget {
             height: 60,
           ),
           body: "el trámite legal que necesitas",
-          image: _buildImage('onboarding-1'),
+          image: _buildImage('onboarding-1.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -85,7 +91,7 @@ class OnBoardingPage extends StatelessWidget {
           ),
           body:
               "en el formulario del documento",
-          image: _buildImage('onboarding-2'),
+          image: _buildImage('onboarding-2.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -98,8 +104,7 @@ class OnBoardingPage extends StatelessWidget {
           ),                    
           body:
               "el abogado ideal para tu trámite",
-          image: _buildImage('onboarding-3'),
-
+          image: _buildImage('onboarding-3.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -110,10 +115,8 @@ class OnBoardingPage extends StatelessWidget {
             width: 60,
             height: 60,
           ),
-          body:
-              "con tu tarjeta de crédito",
-          image: _buildImage('onboarding-4'),
-
+          body: "con tu tarjeta de crédito",
+          image: _buildImage('onboarding-4.jpg'),
           decoration: pageDecoration,
         ),
         
@@ -143,8 +146,40 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Asesorate')),
-      body: const Center(child: Text("Asesorate App")),
-    );
+     body: 
+     Column(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 30.0)),
+            Padding(padding: EdgeInsets.only(right: 900.0)),
+            Image(
+              image: AssetImage('assets/asesorate.png'),
+              width: 250.0,
+              height: 250.0,
+            ),
+            CustomButton(
+              onPressed: (){} 
+            ),
+            Padding(padding: EdgeInsets.only(top: 15.0)),
+            CustomButtonGoogle(
+              onPressed: (){} 
+            ),
+            Padding(padding: EdgeInsets.only(top: 15.0)),
+            CustomButtonEmail(
+              onPressed: (){} 
+            ),
+            Padding(padding: EdgeInsets.only(top: 55.0)),
+            FlatButton(
+              onPressed: () {},
+              child: Text(
+                '¿Ya tienes una cuenta?',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  color: asesorateDark //Color.fromRGBO(88, 89, 91, 1)
+                ),
+              ),
+            ),  
+          ],
+        ),
+    ); 
   }
 }
