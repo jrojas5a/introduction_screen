@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:flutter/foundation.dart';
+import 'package:introduction_example/customButton.dart';
 
 void main() => runApp(App());
 
@@ -36,7 +38,7 @@ class OnBoardingPage extends StatelessWidget {
       children: <Widget>[
 
         Image.asset(
-          'assets/$assetName.jpg',
+          'assets/$assetName',
             
           ),
         
@@ -62,24 +64,31 @@ class OnBoardingPage extends StatelessWidget {
     return IntroductionScreen(
       pages: [
         PageViewModel(
+          title: "",
+          bodyWidget:
+              Image(image: AssetImage('assets/asesorate.png'),height: 490.0,),
+              
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
           title: "Encuentra",
           body: 
               "el trámite legal que necesitas",
-          image: _buildImage('onboarding-1'),
+          image: _buildImage('onboarding-1.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Llena los datos",
           body:
               "en el formulario del documento",
-          image: _buildImage('onboarding-2'),
+          image: _buildImage('onboarding-2.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Buscaremos",
           body:
               "el abogado ideal para tu trámite",
-          image: _buildImage('onboarding-3'),
+          image: _buildImage('onboarding-3.jpg'),
 
           decoration: pageDecoration,
         ),
@@ -87,7 +96,7 @@ class OnBoardingPage extends StatelessWidget {
           title: "Paga",
           body:
               "con tu tarjeta de crédito",
-          image: _buildImage('onboarding-4'),
+          image: _buildImage('onboarding-4.jpg'),
 
           decoration: pageDecoration,
         ),
@@ -113,12 +122,80 @@ class OnBoardingPage extends StatelessWidget {
   }
 }
 
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
+    
     return Scaffold(
-      appBar: AppBar(title: const Text('Asesorate')),
-      body: const Center(child: Text("Asesorate App")),
+     body: 
+     Column(
+          children: <Widget>[
+
+            Padding(padding: EdgeInsets.only(top: 30.0)),
+
+            Padding(padding: EdgeInsets.only(right: 900.0)),
+                        
+            Image(
+              image: AssetImage('assets/asesorate.png'),
+              width: 250.0,
+              height: 250.0,
+
+              ),
+
+            CustomButton(
+              onPressed: (){
+
+
+              } 
+            ),
+            
+            Padding(padding: EdgeInsets.only(top: 15.0)),
+            
+            CustomButtonGoogle(
+              onPressed: (){
+
+
+              } 
+            ),
+            
+            Padding(padding: EdgeInsets.only(top: 15.0)),
+            
+            CustomButtonEmail(
+              onPressed: (){
+
+
+              } 
+            ),
+            
+            Padding(padding: EdgeInsets.only(top: 55.0)),
+            
+            FlatButton(
+              
+              onPressed: () {
+
+
+              },
+
+              child: Text(
+                
+                '¿Ya tienes una cuenta?',
+                style: TextStyle(
+                  
+                  fontSize: 17.0,
+                  color: Color.fromRGBO(88, 89, 91, 1)
+                  
+                  ),
+
+              ),
+            
+            ),  
+
+          ],
+        ),
     );
+
+
   }
 }

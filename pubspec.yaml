@@ -10,9 +10,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+  font_awesome_flutter: ^8.5.0
 
   dots_indicator: ^1.1.0
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.7.4
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  image_path: 'icon/asesorate.png'
+  android: true
+  ios: true                            
+
 
 flutter:
   fonts:
@@ -21,4 +32,7 @@ flutter:
           - asset: fonts/OpenSans-Bold.ttf
       - family: OpenSansRegular
         fonts:
-          - asset: fonts/OpenSans-Regular.ttf                  
+          - asset: fonts/OpenSans-Regular.ttf
+
+
+

@@ -9,6 +9,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  font_awesome_flutter: ^8.5.0
+
   introduction_screen:
     path: ../
 
