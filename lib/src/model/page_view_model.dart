@@ -12,8 +12,8 @@ class PageViewModel {
   final String body;
 
   final IconData icon;
-
   
+  final Widget iconTitleWidget;
 
   /// Widget content of page (description)
   final Widget bodyWidget;
@@ -34,6 +34,7 @@ class PageViewModel {
     this.titleWidget,
     this.body,
     this.icon,
+    this.iconTitleWidget,
     this.bodyWidget,
     this.image,
     this.footer,

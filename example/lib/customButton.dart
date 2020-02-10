@@ -56,7 +56,6 @@ class CustomButtonGoogle extends StatelessWidget {
             Image(
               image: AssetImage(
                         'assets/google.png',
-                        
                 ),
               height: 30.0,  
             ),
@@ -91,13 +90,11 @@ class CustomButtonEmail extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: const <Widget>[
-           
             SizedBox(
               width: 50.0,
             ),
             Text(
               "Registrarme con Email     ",
-              
               style: TextStyle(color: Colors.white, fontSize: 18.0),
             ),
           ],
