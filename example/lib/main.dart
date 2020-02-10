@@ -64,13 +64,6 @@ class OnBoardingPage extends StatelessWidget {
     return IntroductionScreen(
       pages: [
         PageViewModel(
-          title: "",
-          bodyWidget:
-              Image(image: AssetImage('assets/asesorate.png'),height: 490.0,),
-              
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
           title: "Encuentra",
           body: 
               "el trámite legal que necesitas",
