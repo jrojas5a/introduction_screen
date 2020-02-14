@@ -159,7 +159,7 @@ class HomePage extends StatelessWidget {
             FlatButton(
               onPressed: () {},
               child: Text(
-                '¿Aún no tienes una cuenta?',
+                '¿Ya tienes una cuenta?',
                 style: TextStyle(
                   fontSize: 14.0,
                   color: asesorateDark //Color.fromRGBO(88, 89, 91, 1)
